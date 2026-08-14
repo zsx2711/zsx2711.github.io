@@ -1,5 +1,5 @@
 /* =========================================================
-   Desktop Satellite · by zsx
+   Desktop Satellite · by Zhoushengxun
    Hand-soldered, solar-powered mini satellite showcase
    ========================================================= */
 
@@ -644,6 +644,77 @@ footer {
   border-color: var(--accent);
 }
 
+.section-lead {
+  color: var(--text-dim);
+  font-size: 1.05rem;
+  max-width: 680px;
+  margin-bottom: 34px;
+}
+
+/* ---------- Inspired by space (comparison) ---------- */
+.compare-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 22px;
+}
+.compare {
+  background: var(--card);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius);
+  padding: 26px;
+  transition: transform 0.2s, border-color 0.2s;
+}
+.compare:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent);
+}
+.compare-icon {
+  font-size: 1.7rem;
+  margin-bottom: 12px;
+}
+.compare h3 {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  margin-bottom: 8px;
+}
+.compare p {
+  color: var(--text-dim);
+  font-size: 0.93rem;
+  margin-bottom: 6px;
+}
+.compare p em {
+  color: var(--accent);
+  font-style: normal;
+  font-weight: 600;
+}
+
+/* ---------- Space facts ---------- */
+.fact-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+}
+.fact {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  background: var(--card);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius);
+  padding: 20px;
+}
+.fact-icon {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+.fact p {
+  color: var(--text-dim);
+  font-size: 0.95rem;
+}
+.fact p strong {
+  color: var(--text);
+}
+
 /* ---------- Reveal on scroll ---------- */
 .reveal {
   opacity: 0;
@@ -658,6 +729,7 @@ footer {
 /* ---------- Responsive ---------- */
 @media (max-width: 900px) {
   .feature-grid { grid-template-columns: repeat(2, 1fr); }
+  .compare-grid, .fact-list { grid-template-columns: 1fr; }
   .flow { grid-template-columns: 1fr; }
   .flow-arrow { transform: rotate(90deg); }
   .gallery { grid-template-columns: repeat(2, 1fr); }

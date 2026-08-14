@@ -1,4 +1,4 @@
-# 🛰️ Desktop Satellite · by zsx
+# 🛰️ Desktop Satellite · by Zhoushengxun
 
 A hand-soldered, solar-powered miniature satellite that brings **live temperature &amp; humidity** to your desk.
 

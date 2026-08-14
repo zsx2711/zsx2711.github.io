@@ -1,5 +1,5 @@
 // =========================================================
-// Desktop Satellite · by zsx
+// Desktop Satellite · by Zhoushengxun
 // Subtle starfield + scroll-reveal effects
 // =========================================================
 
@@ -49,7 +49,7 @@ window.addEventListener("resize", resize);
 draw();
 
 /* ---------- Reveal on scroll ---------- */
-const revealables = document.querySelectorAll(".section-head, .feature, .flow-step, .gallery-item, .creator-card");
+const revealables = document.querySelectorAll(".section-head, .feature, .flow-step, .gallery-item, .creator-card, .compare, .fact");
 
 const io = new IntersectionObserver(
   (entries) => {
