@@ -4,7 +4,8 @@ dist/
 build/
 *.log
 
-# 编辑器 / 系统文件
+# Claude / 编辑器 / 系统文件
+.claude/
 .vscode/*
 !.vscode/extensions.json
 .idea/
