@@ -429,16 +429,16 @@ footer {
 
 /* ---------- Gallery ---------- */
 .gallery {
-  columns: 3;
-  column-gap: 22px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 22px;
+  align-items: start;
 }
 .gallery-item {
   background: var(--card);
   border: 1px solid var(--card-border);
   border-radius: var(--radius);
   overflow: hidden;
-  margin-bottom: 22px;
-  break-inside: avoid;
 }
 .gallery-item img {
   width: 100%;
@@ -660,14 +660,14 @@ footer {
   .feature-grid { grid-template-columns: repeat(2, 1fr); }
   .flow { grid-template-columns: 1fr; }
   .flow-arrow { transform: rotate(90deg); }
-  .gallery { columns: 2; }
+  .gallery { grid-template-columns: repeat(2, 1fr); }
   .about-grid { grid-template-columns: 1fr; }
   .nav-links { display: none; }
 }
 
 @media (max-width: 560px) {
   .feature-grid { grid-template-columns: 1fr; }
-  .gallery { columns: 1; }
+  .gallery { grid-template-columns: 1fr; }
   .hero-stats { gap: 24px; }
   .creator-card { flex-direction: column; }
 }
