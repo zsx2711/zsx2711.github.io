@@ -1,48 +1,45 @@
-# 我的静态站点
+# 🛰️ Desktop Satellite · by zsx
 
-一个简洁美观的静态网页模板，基于纯 HTML / CSS / JavaScript，零依赖、轻量快速，开箱即用。
+A hand-soldered, solar-powered miniature satellite that brings **live temperature &amp; humidity** to your desk.
 
-## ✨ 特性
+Built piece by piece — every board, wire and solder joint made by hand. It captures room light with a
+solar panel, runs on its own without a cable, and shows the current temperature and humidity on a small
+onboard display.
 
-- 响应式布局，适配手机与桌面端
-- 无任何外部依赖，加载速度快
-- 语义化 HTML 标签，利于 SEO
-- 支持一键部署到 GitHub Pages
+## ✨ Features
 
-## 📁 项目结构
+- **Solar powered** — a compact photovoltaic panel harvests indoor light
+- **Live temperature** — onboard sensor reads the ambient temperature in real time
+- **Humidity monitor** — relative humidity measured continuously
+- **Hand-soldered** — assembled entirely by hand, no ready-made kit
+- **Clear display** — OLED / LCD shows both readings at a glance
+- **Always on** — stores sunlight so it keeps running through the evening
+
+## 🔧 How it works
 
 ```
-├── index.html          # 主页
-├── css/
-│   └── style.css       # 样式
-├── js/
-│   └── script.js       # 交互脚本
-├── .github/
-│   └── workflows/
-│       └── pages.yml   # GitHub Pages 自动部署
+☀️ Solar panel  →  ⚡ Regulate & store power  →  🧠 Microcontroller reads sensor  →  🖥️ Display
+```
+
+Core building blocks: solar panel · microcontroller · temperature/humidity sensor (e.g. DHT11/DHT22) ·
+OLED/LCD display · wiring &amp; solder.
+
+## 📁 Project structure
+
+```
+├── index.html          # Showcase site (English)
+├── css/style.css       # Styles + space theme
+├── js/script.js        # Starfield & scroll-reveal effects
+├── images/             # Gallery photos (img1–img5)
+├── .github/workflows/pages.yml   # GitHub Pages auto-deploy
 └── README.md
 ```
 
-## 🚀 快速开始
+## 🚀 Deployment
 
-### 本地预览
+The repo includes a GitHub Actions workflow that deploys the site to GitHub Pages automatically.
+Then it's live at `https://zsx2711.github.io/`.
 
-直接用浏览器打开 `index.html`，或使用本地服务器：
+## 📄 License
 
-```bash
-# Python
-python -m http.server 8000
-
-# 或 Node.js
-npx serve .
-```
-
-然后访问 `http://localhost:8000`。
-
-### 部署到 GitHub Pages
-
-推送代码到 GitHub 后，项目中已配置的 `.github/workflows/pages.yml` 会自动将网站部署到 `https://<用户名>.github.io/<仓库名>/`。
-
-## 📄 许可证
-
-本项目基于 [MIT](./LICENSE) 许可证开源。
+MIT License — see [LICENSE](./LICENSE).

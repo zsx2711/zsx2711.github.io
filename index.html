@@ -1,58 +1,200 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="一个简洁美观的静态网页模板，可直接部署到 GitHub Pages。">
-  <title>我的静态站点</title>
+  <meta name="description" content="Desktop Satellite — a hand-soldered, solar-powered mini satellite that brings live temperature &amp; humidity to your desk. Project by zsx.">
+  <title>Desktop Satellite · by zsx</title>
   <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
+  <!-- Starfield background -->
+  <canvas id="stars" aria-hidden="true"></canvas>
+
   <header class="site-header">
     <nav class="nav">
-      <a href="#" class="logo">MySite</a>
+      <a href="#hero" class="logo">🛰️ Desktop<span>Satellite</span></a>
       <ul class="nav-links">
-        <li><a href="#home">首页</a></li>
-        <li><a href="#about">关于</a></li>
-        <li><a href="#features">特性</a></li>
-        <li><a href="#contact">联系</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#how">How it works</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#creator">Creator</a></li>
       </ul>
     </nav>
   </header>
 
   <main>
-    <section id="home" class="hero">
-      <h1>你好，欢迎来到我的网站 👋</h1>
-      <p>这是一个基于 HTML / CSS / JavaScript 的静态网页模板，零依赖、轻量快速，适合部署到 GitHub Pages。</p>
-      <div class="hero-actions">
-        <button id="btn-time" class="btn btn-primary">点击查看当前时间</button>
-        <p id="time-display" class="time-display" aria-live="polite"></p>
+    <!-- Hero -->
+    <section id="hero" class="hero">
+      <div class="hero-inner">
+        <p class="hero-kicker">A hand-built miniature satellite for your desk</p>
+        <h1 class="hero-title">Desktop <span class="accent">Satellite</span></h1>
+        <p class="hero-sub">
+          Powered by the sun. Assembled by hand — one solder joint at a time.
+          It quietly watches the room and tells you the temperature &amp; humidity.
+        </p>
+        <div class="hero-actions">
+          <a href="#gallery" class="btn btn-primary">See the build</a>
+          <a href="#how" class="btn btn-ghost">How it works</a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat"><span class="stat-num">100%</span><span class="stat-label">Solar powered</span></div>
+          <div class="stat"><span class="stat-num">2×</span><span class="stat-label">Sensors on board</span></div>
+          <div class="stat"><span class="stat-num">1</span><span class="stat-label">Hand-soldered satellite</span></div>
+        </div>
       </div>
     </section>
 
+    <!-- About -->
     <section id="about" class="section">
-      <h2>关于此项目</h2>
-      <p>这是一个开箱即用的静态站点骨架，包含响应式布局、语义化 HTML 和简洁的交互示例，你可以直接在此基础上扩展自己的内容。</p>
+      <div class="section-head">
+        <span class="tag">About</span>
+        <h2>A little piece of space,<br>on your desk</h2>
+      </div>
+      <div class="about-grid">
+        <div class="about-text">
+          <p>
+            <strong>Desktop Satellite</strong> is a small hand-built model that behaves like the real thing —
+            it captures light with a <strong>solar panel</strong>, converts it into power, and runs on its own
+            with no cable attached. Every board, wire and solder joint was put together <strong>by hand</strong>.
+          </p>
+          <p>
+            On its onboard screen it shows the <strong>current temperature and humidity</strong> of the room,
+            so the tiny satellite doubles as a living weather station that sits quietly beside your monitor.
+          </p>
+        </div>
+        <div class="about-card">
+          <div class="mini-sat" aria-hidden="true">
+            <span class="panel"></span>
+            <span class="body"></span>
+            <span class="antenna a1"></span>
+            <span class="antenna a2"></span>
+            <span class="screen">24°C · 55%</span>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <section id="features" class="section">
-      <h2>特性</h2>
-      <ul class="feature-list">
-        <li>✅ 响应式布局，适配手机与桌面</li>
-        <li>✅ 无任何外部依赖，加载快</li>
-        <li>✅ 语义化标签，利于 SEO</li>
-        <li>✅ 开箱即用，零配置部署</li>
-      </ul>
+    <!-- Features -->
+    <section id="features" class="section alt">
+      <div class="section-head">
+        <span class="tag">Features</span>
+        <h2>What it can do</h2>
+      </div>
+      <div class="feature-grid">
+        <article class="feature">
+          <div class="feature-icon">☀️</div>
+          <h3>Solar powered</h3>
+          <p>A compact photovoltaic panel harvests indoor light and keeps the satellite running free of cables.</p>
+        </article>
+        <article class="feature">
+          <div class="feature-icon">🌡️</div>
+          <h3>Live temperature</h3>
+          <p>An onboard sensor reads the ambient temperature and updates the display in real time.</p>
+        </article>
+        <article class="feature">
+          <div class="feature-icon">💧</div>
+          <h3>Humidity monitor</h3>
+          <p>Relative humidity is measured continuously, so you always know how dry or comfy the room feels.</p>
+        </article>
+        <article class="feature">
+          <div class="feature-icon">🔧</div>
+          <h3>Hand-soldered</h3>
+          <p>Built piece by piece — every connection made by hand with a soldering iron, no ready-made kit.</p>
+        </article>
+        <article class="feature">
+          <div class="feature-icon">🖥️</div>
+          <h3>Clear display</h3>
+          <p>A small OLED / LCD screen shows both readings at a glance, even in low light.</p>
+        </article>
+        <article class="feature">
+          <div class="feature-icon">🛰️</div>
+          <h3>Always on</h3>
+          <p>With stored sunlight it keeps running through the evening, a true "desk satellite" that never sleeps.</p>
+        </article>
+      </div>
     </section>
 
-    <section id="contact" class="section">
-      <h2>联系我们</h2>
-      <p>有问题？欢迎通过 <a href="https://github.com">GitHub</a> 提交 Issue。</p>
+    <!-- How it works -->
+    <section id="how" class="section">
+      <div class="section-head">
+        <span class="tag">How it works</span>
+        <h2>From sunlight to numbers</h2>
+      </div>
+      <div class="flow">
+        <div class="flow-step">
+          <span class="step-num">1</span>
+          <h3>Capture light</h3>
+          <p>The solar panel turns room light into electricity.</p>
+        </div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step">
+          <span class="step-num">2</span>
+          <h3>Regulate power</h3>
+          <p>A small &amp; stable circuit stores and conditions the energy.</p>
+        </div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step">
+          <span class="step-num">3</span>
+          <h3>Sense the room</h3>
+          <p>The temperature &amp; humidity sensor feeds the microcontroller.</p>
+        </div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step">
+          <span class="step-num">4</span>
+          <h3>Show the result</h3>
+          <p>The display lights up with live readings for you to read.</p>
+        </div>
+      </div>
+      <p class="flow-note">
+        Core building blocks: ×1 solar panel · ×1 microcontroller · ×1 temp/humidity sensor (e.g. DHT11 / DHT22)
+        · ×1 OLED/LCD display · wiring &amp; solder. All joined by hand.
+      </p>
+    </section>
+
+    <!-- Gallery -->
+    <section id="gallery" class="section alt">
+      <div class="section-head">
+        <span class="tag">Gallery</span>
+        <h2>The build, step by step</h2>
+      </div>
+      <div class="gallery">
+        <figure class="gallery-item"><img src="images/img1.svg" alt="The finished Desktop Satellite" loading="lazy"><figcaption>The finished satellite on the desk</figcaption></figure>
+        <figure class="gallery-item"><img src="images/img2.svg" alt="The solar panel and display" loading="lazy"><figcaption>Solar panel &amp; the display</figcaption></figure>
+        <figure class="gallery-item"><img src="images/img3.svg" alt="Hand soldering in progress" loading="lazy"><figcaption>Hand-soldering the joints</figcaption></figure>
+        <figure class="gallery-item"><img src="images/img4.svg" alt="Live temperature and humidity reading" loading="lazy"><figcaption>Live temperature &amp; humidity</figcaption></figure>
+        <figure class="gallery-item"><img src="images/img5.svg" alt="Close-up of the internals" loading="lazy"><figcaption>Close-up of the internals</figcaption></figure>
+      </div>
+    </section>
+
+    <!-- Creator -->
+    <section id="creator" class="section">
+      <div class="section-head">
+        <span class="tag">Creator</span>
+        <h2>Made by zsx</h2>
+      </div>
+      <div class="creator-card">
+        <div class="creator-avatar">zs</div>
+        <div class="creator-info">
+          <h3>zsx</h3>
+          <p>
+            A maker who loves turning raw components into something meaningful.
+            <em>Desktop Satellite</em> started as a soldering practice project and grew into
+            a tiny solar-powered companion that quietly watches the room.
+          </p>
+          <p class="creator-meta">Project · Crafted on a desk near a window ☀️</p>
+        </div>
+      </div>
     </section>
   </main>
 
   <footer class="site-footer">
-    <p>&copy; <span id="year"></span> 我的静态站点 · 由 HTML/CSS/JS 构建</p>
+    <p>Desktop Satellite · crafted by <strong>zsx</strong> — hand-soldered, solar-powered 🛰️</p>
+    <p class="footer-note">© <span id="year"></span> · Built with HTML / CSS / JS</p>
   </footer>
 
   <script src="js/script.js"></script>

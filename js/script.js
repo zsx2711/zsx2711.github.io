@@ -1,17 +1,72 @@
-// 平滑锚点滚动已由 CSS `scroll-behavior` 处理，这里补充简单的交互示例。
+// =========================================================
+// Desktop Satellite · by zsx
+// Subtle starfield + scroll-reveal effects
+// =========================================================
 
-// 显示当前时间
-const btn = document.getElementById("btn-time");
-const display = document.getElementById("time-display");
+/* ---------- Starfield background ---------- */
+const canvas = document.getElementById("stars");
+const ctx = canvas.getContext("2d");
+let stars = [];
+let w, h;
 
-btn.addEventListener("click", () => {
-  const now = new Date().toLocaleString("zh-CN", {
-    hour12: false,
-    dateStyle: "full",
-    timeStyle: "medium",
-  });
-  display.textContent = `当前时间：${now}`;
+function resize() {
+  w = canvas.width = window.innerWidth;
+  h = canvas.height = window.innerHeight;
+  buildStars();
+}
+
+function buildStars() {
+  const count = Math.min(160, Math.floor((w * h) / 9000));
+  stars = Array.from({ length: count }, () => ({
+    x: Math.random() * w,
+    y: Math.random() * h,
+    r: Math.random() * 1.4 + 0.2,
+    speed: Math.random() * 0.18 + 0.03,
+    twinkle: Math.random() * Math.PI * 2,
+  }));
+}
+
+function draw() {
+  ctx.clearRect(0, 0, w, h);
+  for (const s of stars) {
+    s.y += s.speed;
+    if (s.y > h) {
+      s.y = -2;
+      s.x = Math.random() * w;
+    }
+    s.twinkle += 0.02;
+    const alpha = 0.35 + 0.4 * Math.abs(Math.sin(s.twinkle));
+    ctx.beginPath();
+    ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
+    ctx.fillStyle = `rgba(230, 240, 255, ${alpha})`;
+    ctx.fill();
+  }
+  requestAnimationFrame(draw);
+}
+
+resize();
+window.addEventListener("resize", resize);
+draw();
+
+/* ---------- Reveal on scroll ---------- */
+const revealables = document.querySelectorAll(".section-head, .feature, .flow-step, .gallery-item, .creator-card");
+
+const io = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+        io.unobserve(entry.target);
+      }
+    });
+  },
+  { threshold: 0.12 }
+);
+
+revealables.forEach((el) => {
+  el.classList.add("reveal");
+  io.observe(el);
 });
 
-// 页脚年份自动更新
+/* ---------- Footer year ---------- */
 document.getElementById("year").textContent = new Date().getFullYear();
