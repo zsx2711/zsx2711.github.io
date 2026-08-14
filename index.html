@@ -21,6 +21,8 @@
         <li><a href="#about">About</a></li>
         <li><a href="#features">Features</a></li>
         <li><a href="#how">How it works</a></li>
+        <li><a href="#journey">Build journey</a></li>
+        <li><a href="#inside">What’s inside</a></li>
         <li><a href="#inspired">Inspired by space</a></li>
         <li><a href="#facts">Space facts</a></li>
         <li><a href="#gallery">Gallery</a></li>
@@ -68,6 +70,16 @@
           <p>
             On its onboard screen it shows the <strong>current temperature and humidity</strong> of the room,
             so the tiny satellite doubles as a living weather station that sits quietly beside your monitor.
+          </p>
+          <p>
+            It started as a way to practice soldering and electronics — turning raw components into something
+            that actually works. The result is a small piece of <strong>“space”</strong> on the desk: a machine
+            powered by the sun, sensing the room, and always quietly on.
+          </p>
+          <p>
+            Because it needs no cable and stores its own energy, it can be placed anywhere — by a window for
+            maximum light, or anywhere a bit of light reaches. It’s the kind of project that makes an ordinary
+            desk feel a little more like mission control.
           </p>
         </div>
         <div class="about-card">
@@ -157,6 +169,96 @@
         Core building blocks: ×1 solar panel · ×1 microcontroller · ×1 temp/humidity sensor (e.g. DHT11 / DHT22)
         · ×1 OLED/LCD display · wiring &amp; solder. All joined by hand.
       </p>
+    </section>
+
+    <!-- Build journey -->
+    <section id="journey" class="section alt">
+      <div class="section-head">
+        <span class="tag">Build journey</span>
+        <h2>From parts to a tiny satellite</h2>
+      </div>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-marker">1</div>
+          <div class="timeline-body">
+            <h3>Start with the display &amp; serial port</h3>
+            <p>The first step was soldering the display and serial port onto the board — the “face” and the
+            connection point the satellite would use to talk to the outside world.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-marker">2</div>
+          <div class="timeline-body">
+            <h3>Build the main frame</h3>
+            <p>Next, the overall body was assembled and soldered together — the frame that holds everything
+            in place and gives the satellite its shape.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-marker">3</div>
+          <div class="timeline-body">
+            <h3>Add the temperature &amp; humidity sensor</h3>
+            <p>Then the sensor was soldered in, giving the satellite its “sense of smell” — the ability to
+            read the temperature and humidity of the room around it.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-marker">4</div>
+          <div class="timeline-body">
+            <h3>Wire up the internals</h3>
+            <p>The inside was wired and routed so that power and data could flow cleanly between the panel,
+            the sensor, the screen and the brain of the build.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-marker">5</div>
+          <div class="timeline-body">
+            <h3>Add the battery — the final result</h3>
+            <p>Finally the battery was added so the satellite can store its solar charge and keep running
+            on its own. That’s when it truly became a working desktop satellite.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- What's inside -->
+    <section id="inside" class="section">
+      <div class="section-head">
+        <span class="tag">What’s inside</span>
+        <h2>Every part plays a role</h2>
+      </div>
+      <div class="parts-grid">
+        <div class="part">
+          <span class="part-icon">☀️</span>
+          <h3>The solar panel</h3>
+          <p>The energy source — it catches light and turns it into power for the whole satellite.</p>
+        </div>
+        <div class="part">
+          <span class="part-icon">🧠</span>
+          <h3>The microcontroller</h3>
+          <p>The brain — it reads the sensor and decides what the display should show.</p>
+        </div>
+        <div class="part">
+          <span class="part-icon">🌡️</span>
+          <h3>The sensor</h3>
+          <p>The senses — it measures the temperature and humidity of the room.</p>
+        </div>
+        <div class="part">
+          <span class="part-icon">🖥️</span>
+          <h3>The display</h3>
+          <p>The voice — it shows the live readings so you can read them at a glance.</p>
+        </div>
+        <div class="part">
+          <span class="part-icon">🔋</span>
+          <h3>The battery</h3>
+          <p>The endurance — it stores solar charge so the satellite keeps going even without light.</p>
+        </div>
+        <div class="part">
+          <span class="part-icon">🔩</span>
+          <h3>The frame &amp; wiring</h3>
+          <p>The body — component holders, wires and solder that hold it all together by hand.</p>
+        </div>
+      </div>
     </section>
 
     <!-- Inspired by space -->

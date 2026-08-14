@@ -49,7 +49,7 @@ window.addEventListener("resize", resize);
 draw();
 
 /* ---------- Reveal on scroll ---------- */
-const revealables = document.querySelectorAll(".section-head, .feature, .flow-step, .gallery-item, .creator-card, .compare, .fact");
+const revealables = document.querySelectorAll(".section-head, .feature, .flow-step, .gallery-item, .creator-card, .compare, .fact, .timeline-item, .part");
 
 const io = new IntersectionObserver(
   (entries) => {
