@@ -22,6 +22,7 @@
         <li><a href="#features">Features</a></li>
         <li><a href="#how">How it works</a></li>
         <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#video">Video</a></li>
         <li><a href="#creator">Creator</a></li>
       </ul>
     </nav>
@@ -168,6 +169,24 @@
         <figure class="gallery-item"><img src="images/img3.svg" alt="Hand soldering in progress" loading="lazy"><figcaption>Hand-soldering the joints</figcaption></figure>
         <figure class="gallery-item"><img src="images/img4.svg" alt="Live temperature and humidity reading" loading="lazy"><figcaption>Live temperature &amp; humidity</figcaption></figure>
         <figure class="gallery-item"><img src="images/img5.svg" alt="Close-up of the internals" loading="lazy"><figcaption>Close-up of the internals</figcaption></figure>
+      </div>
+    </section>
+
+    <!-- Video -->
+    <section id="video" class="section">
+      <div class="section-head">
+        <span class="tag">Video</span>
+        <h2>Watch it in motion</h2>
+      </div>
+      <div class="video-wrap">
+        <video id="demo-video" controls preload="metadata" poster="images/video-poster.svg">
+          <source src="video/demo.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <div class="video-overlay" id="video-overlay" aria-hidden="true">
+          <button class="play-btn" aria-label="Play video">▶</button>
+          <span>Play the build</span>
+        </div>
       </div>
     </section>
 

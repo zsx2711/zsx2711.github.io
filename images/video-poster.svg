@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0b1020"/><stop offset="1" stop-color="#151c36"/>
+    </linearGradient>
+  </defs>
+  <rect width="1280" height="720" fill="url(#g)"/>
+  <circle cx="640" cy="360" r="90" fill="none" stroke="#6ee7e0" stroke-opacity="0.6" stroke-width="2"/>
+  <polygon points="640,300 672,400 608,400" fill="#6ee7e0" fill-opacity="0.85"/>
+  <text x="640" y="470" text-anchor="middle" fill="#e7ecff" font-family="Segoe UI, sans-serif" font-size="30" font-weight="700">Watch the build</text>
+  <text x="640" y="512" text-anchor="middle" fill="#9aa6c8" font-family="Segoe UI, sans-serif" font-size="18">Demo video coming soon</text>
+  <text x="640" y="660" text-anchor="middle" fill="#9aa6c8" fill-opacity="0.6" font-family="Segoe UI, sans-serif" font-size="14">Replace with video/demo.mp4</text>
+</svg>

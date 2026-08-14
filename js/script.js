@@ -70,3 +70,36 @@ revealables.forEach((el) => {
 
 /* ---------- Footer year ---------- */
 document.getElementById("year").textContent = new Date().getFullYear();
+
+/* ---------- Video play overlay ---------- */
+const video = document.getElementById("demo-video");
+const overlay = document.getElementById("video-overlay");
+
+function showOverlay() {
+  overlay.classList.add("playing");
+  video.classList.add("playing");
+}
+function hideOverlay() {
+  overlay.classList.remove("playing");
+  video.classList.remove("playing");
+}
+
+overlay.addEventListener("click", () => {
+  video.classList.remove("playing");
+  overlay.classList.remove("playing");
+  video.play();
+});
+
+video.addEventListener("play", () => {
+  video.classList.add("playing");
+  overlay.classList.add("playing");
+  if (overlay.parentElement) overlay.parentElement.classList.add("playing");
+});
+video.addEventListener("pause", () => {
+  video.classList.remove("playing");
+  if (overlay.parentElement) overlay.parentElement.classList.remove("playing");
+});
+video.addEventListener("ended", () => {
+  video.classList.remove("playing");
+  if (overlay.parentElement) overlay.parentElement.classList.remove("playing");
+});
