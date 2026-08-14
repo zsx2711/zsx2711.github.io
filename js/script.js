@@ -75,15 +75,6 @@ document.getElementById("year").textContent = new Date().getFullYear();
 const video = document.getElementById("demo-video");
 const overlay = document.getElementById("video-overlay");
 
-function showOverlay() {
-  overlay.classList.add("playing");
-  video.classList.add("playing");
-}
-function hideOverlay() {
-  overlay.classList.remove("playing");
-  video.classList.remove("playing");
-}
-
 overlay.addEventListener("click", () => {
   video.classList.remove("playing");
   overlay.classList.remove("playing");
@@ -102,4 +93,64 @@ video.addEventListener("pause", () => {
 video.addEventListener("ended", () => {
   video.classList.remove("playing");
   if (overlay.parentElement) overlay.parentElement.classList.remove("playing");
+});
+
+/* ---------- Lightbox ---------- */
+const lightbox = document.getElementById("lightbox");
+const lightboxImg = lightbox.querySelector(".lightbox-img");
+const lightboxCaption = lightbox.querySelector(".lightbox-caption");
+const galleryImages = Array.from(document.querySelectorAll(".gallery-item img"));
+let currentIndex = 0;
+
+function openLightbox(index) {
+  currentIndex = index;
+  updateLightbox();
+  lightbox.hidden = false;
+  document.body.style.overflow = "hidden";
+}
+
+function updateLightbox() {
+  const img = galleryImages[currentIndex];
+  lightboxImg.src = img.src;
+  lightboxImg.alt = img.alt;
+  lightboxCaption.textContent = img.closest("figure").querySelector("figcaption").textContent;
+}
+
+function closeLightbox() {
+  lightbox.hidden = true;
+  document.body.style.overflow = "";
+}
+
+galleryImages.forEach((img, i) => {
+  img.style.cursor = "zoom-in";
+  img.addEventListener("click", () => openLightbox(i));
+});
+
+lightbox.addEventListener("click", (e) => {
+  if (e.target === lightbox) closeLightbox();
+});
+lightbox.querySelector(".lightbox-close").addEventListener("click", closeLightbox);
+lightbox.querySelector(".lightbox-prev").addEventListener("click", (e) => {
+  e.stopPropagation();
+  currentIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length;
+  updateLightbox();
+});
+lightbox.querySelector(".lightbox-next").addEventListener("click", (e) => {
+  e.stopPropagation();
+  currentIndex = (currentIndex + 1) % galleryImages.length;
+  updateLightbox();
+});
+
+// 键盘导航：Esc 关闭，左右切换
+document.addEventListener("keydown", (e) => {
+  if (lightbox.hidden) return;
+  if (e.key === "Escape") closeLightbox();
+  if (e.key === "ArrowLeft") {
+    currentIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length;
+    updateLightbox();
+  }
+  if (e.key === "ArrowRight") {
+    currentIndex = (currentIndex + 1) % galleryImages.length;
+    updateLightbox();
+  }
 });
