@@ -154,3 +154,21 @@ document.addEventListener("keydown", (e) => {
     updateLightbox();
   }
 });
+
+/* ---------- Live telemetry (simulated drift) ---------- */
+const tTemp = document.getElementById("t-temp");
+const tHum = document.getElementById("t-hum");
+const tBatt = document.getElementById("t-batt");
+let temp = 23.4;
+let hum = 54;
+let batt = 82;
+
+setInterval(() => {
+  // gentle random walk so the telemetry feels alive without being distracting
+  temp += (Math.random() - 0.5) * 0.4;
+  hum += (Math.random() - 0.5) * 0.8;
+  batt = Math.max(60, Math.min(95, batt + (Math.random() - 0.5)));
+  tTemp.textContent = `${temp.toFixed(1)}°C`;
+  tHum.textContent = `${Math.round(hum)}%`;
+  tBatt.textContent = `${Math.round(batt)}%`;
+}, 3000);
