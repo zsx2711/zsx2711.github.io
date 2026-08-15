@@ -154,28 +154,3 @@ document.addEventListener("keydown", (e) => {
     updateLightbox();
   }
 });
-
-/* ---------- Live telemetry (simulated real-time) ---------- */
-const elTemp = document.getElementById("t-temp");
-const elHum = document.getElementById("t-hum");
-const elSolar = document.getElementById("t-solar");
-const elBatt = document.getElementById("t-batt");
-
-let temp = 23.4;
-let hum = 54;
-let batt = 82;
-
-function tick() {
-  // smooth random-walk so readings feel live
-  temp += (Math.random() - 0.5) * 0.5;
-  hum += (Math.random() - 0.5) * 1.2;
-  batt = Math.max(60, Math.min(96, batt + (Math.random() - 0.5)));
-  elTemp.textContent = `${temp.toFixed(1)}°C`;
-  elHum.textContent = `${Math.round(hum)}%`;
-  elBatt.textContent = `${Math.round(batt)}%`;
-  // Solar toggles casually between Charging / Full while the sun pulses
-  elSolar.textContent = Math.round(batt) > 94 ? "Full ☀️" : "Charging";
-}
-
-tick();
-setInterval(tick, 2000);

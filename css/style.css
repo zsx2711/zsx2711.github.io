@@ -331,9 +331,6 @@ footer {
   box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
 }
 .telemetry-live-head {
-  display: flex;
-  align-items: center;
-  gap: 10px;
   padding: 13px 18px;
   background: rgba(110, 231, 224, 0.1);
   border-bottom: 1px solid var(--card-border);
@@ -343,19 +340,6 @@ footer {
   text-transform: uppercase;
   color: var(--accent);
   font-weight: 700;
-}
-.live-dot {
-  width: 9px;
-  height: 9px;
-  border-radius: 50%;
-  background: var(--accent);
-  box-shadow: 0 0 0 0 rgba(110, 231, 224, 0.5);
-  animation: livepulse 2s infinite;
-}
-@keyframes livepulse {
-  0% { box-shadow: 0 0 0 0 rgba(110, 231, 224, 0.5); }
-  70% { box-shadow: 0 0 0 9px rgba(110, 231, 224, 0); }
-  100% { box-shadow: 0 0 0 0 rgba(110, 231, 224, 0); }
 }
 .telemetry-row {
   display: flex;
@@ -376,6 +360,13 @@ footer {
   font-size: 1.05rem;
   font-weight: 700;
   color: var(--text);
+}
+.telemetry-note {
+  margin-top: 10px;
+  color: var(--text-dim);
+  font-size: 0.78rem;
+  text-align: center;
+  opacity: 0.85;
 }
 
 /* ---------- Features ---------- */
