@@ -83,7 +83,33 @@
           </p>
         </div>
         <div class="about-card">
-          <img src="images/img2-telemetry.jpg" alt="Telemetry readout displayed on the solar panel" class="telemetry-img" loading="lazy">
+          <div class="solar-panel" aria-hidden="true">
+            <div class="panel-cells"></div>
+            <div class="panel-shine"></div>
+            <div class="panel-sun"></div>
+          </div>
+          <div class="telemetry-live" aria-label="Live telemetry readings">
+            <div class="telemetry-live-head">
+              <span class="live-dot"></span>
+              <span>LIVE TELEMETRY</span>
+            </div>
+            <div class="telemetry-row">
+              <span class="telemetry-label">Temperature</span>
+              <span class="telemetry-value" id="t-temp">—</span>
+            </div>
+            <div class="telemetry-row">
+              <span class="telemetry-label">Humidity</span>
+              <span class="telemetry-value" id="t-hum">—</span>
+            </div>
+            <div class="telemetry-row">
+              <span class="telemetry-label">Solar</span>
+              <span class="telemetry-value" id="t-solar">Charging</span>
+            </div>
+            <div class="telemetry-row">
+              <span class="telemetry-label">Battery</span>
+              <span class="telemetry-value" id="t-batt">—</span>
+            </div>
+          </div>
         </div>
       </div>
     </section>

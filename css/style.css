@@ -262,17 +262,120 @@ footer {
   color: var(--text);
 }
 
-/* Telemetry image on the solar panel */
+/* Animated solar panel + live telemetry */
 .about-card {
   display: grid;
   place-items: center;
 }
-.telemetry-img {
+
+.solar-panel {
+  position: relative;
+  width: 300px;
+  height: 190px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #0a1a3a, #123a66);
+  border: 2px solid var(--accent);
+  box-shadow: 0 0 34px rgba(110, 231, 224, 0.4), inset 0 0 30px rgba(110, 231, 224, 0.18);
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+/* solar cell grid */
+.panel-cells {
+  position: absolute;
+  inset: 10px;
+  border-radius: 10px;
+  background:
+    repeating-linear-gradient(0deg, transparent 0 30px, rgba(110, 231, 224, 0.35) 30px 32px),
+    repeating-linear-gradient(90deg, transparent 0 40px, rgba(110, 231, 224, 0.35) 40px 42px);
+}
+/* moving light sweep */
+.panel-shine {
+  position: absolute;
+  top: -20%;
+  bottom: -20%;
+  width: 55%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.5), transparent);
+  transform: skewX(-18deg);
+  animation: shine 2.6s linear infinite;
+  filter: blur(2px);
+}
+@keyframes shine {
+  0% { left: -60%; }
+  100% { left: 115%; }
+}
+/* pulsing sun glow */
+.panel-sun {
+  position: absolute;
+  top: 14px;
+  right: 16px;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 0 rgba(110, 231, 224, 0.6);
+  animation: sunpulse 1.8s infinite;
+}
+@keyframes sunpulse {
+  0% { box-shadow: 0 0 0 0 rgba(110, 231, 224, 0.6); }
+  70% { box-shadow: 0 0 0 16px rgba(110, 231, 224, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(110, 231, 224, 0); }
+}
+
+.telemetry-live {
   width: 100%;
   max-width: 320px;
-  border-radius: var(--radius);
+  background: var(--card);
   border: 1px solid var(--card-border);
+  border-radius: var(--radius);
+  overflow: hidden;
   box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
+}
+.telemetry-live-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 13px 18px;
+  background: rgba(110, 231, 224, 0.1);
+  border-bottom: 1px solid var(--card-border);
+  font-family: var(--font-display);
+  font-size: 0.82rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  font-weight: 700;
+}
+.live-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 0 0 rgba(110, 231, 224, 0.5);
+  animation: livepulse 2s infinite;
+}
+@keyframes livepulse {
+  0% { box-shadow: 0 0 0 0 rgba(110, 231, 224, 0.5); }
+  70% { box-shadow: 0 0 0 9px rgba(110, 231, 224, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(110, 231, 224, 0); }
+}
+.telemetry-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 11px 18px;
+  border-bottom: 1px dashed var(--card-border);
+}
+.telemetry-row:last-child {
+  border-bottom: none;
+}
+.telemetry-label {
+  color: var(--text-dim);
+  font-size: 0.92rem;
+}
+.telemetry-value {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text);
 }
 
 /* ---------- Features ---------- */
