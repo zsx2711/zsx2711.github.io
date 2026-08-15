@@ -47,9 +47,9 @@
           <a href="#how" class="btn btn-ghost">How it works</a>
         </div>
         <div class="hero-stats">
-          <div class="stat"><span class="stat-num">ESP32</span><span class="stat-label">WiFi brain onboard</span></div>
+          <div class="stat"><span class="stat-num">NTP</span><span class="stat-label">Auto time sync to the second</span></div>
           <div class="stat"><span class="stat-num">SHT31-D</span><span class="stat-label">High-accuracy sensor</span></div>
-          <div class="stat"><span class="stat-num">1</span><span class="stat-label">Hand-soldered satellite</span></div>
+          <div class="stat"><span class="stat-num">ESP32</span><span class="stat-label">WiFi brain onboard</span></div>
         </div>
       </div>
     </section>
@@ -69,7 +69,8 @@
           </p>
           <p>
             On its onboard screen it shows the <strong>current temperature and humidity</strong> of the room,
-            so the tiny satellite doubles as a living weather station that sits quietly beside your monitor.
+            and because the ESP32 chip has WiFi, it even syncs the <strong>time automatically</strong> — so the
+            little satellite doubles as a living weather station and a precise clock that sits beside your monitor.
           </p>
           <p>
             It started as a way to practice soldering and electronics — turning raw components into something
@@ -144,6 +145,11 @@
           <div class="feature-icon">🖥️</div>
           <h3>Clear display</h3>
           <p>A 0.96-inch TFT colour screen shows the readings clearly, even in low light.</p>
+        </article>
+        <article class="feature">
+          <div class="feature-icon">🕒</div>
+          <h3>Connected clock</h3>
+          <p>Over WiFi it syncs the time by NTP automatically — accurate to the second, no setting needed.</p>
         </article>
         <article class="feature">
           <div class="feature-icon">🛰️</div>
@@ -279,7 +285,7 @@
         <div class="part">
           <span class="part-icon">🧠</span>
           <h3>The ESP32-C3 brain</h3>
-          <p>A RISC-V microcontroller with built-in WiFi — it reads the sensor and drives the display.</p>
+          <p>A RISC-V microcontroller with built-in WiFi — it reads the sensor, drives the display, and syncs the clock by NTP.</p>
         </div>
         <div class="part">
           <span class="part-icon">🌡️</span>
