@@ -39,16 +39,16 @@
         <p class="hero-kicker">A hand-built miniature satellite for your desk</p>
         <h1 class="hero-title">Desktop <span class="accent">Satellite</span></h1>
         <p class="hero-sub">
-          Powered by the sun. Assembled by hand — one solder joint at a time.
-          It quietly watches the room and tells you the temperature &amp; humidity.
+          Assembled by hand — one solder joint at a time. A solar-assisted machine
+          that quietly watches the room and tells you the temperature &amp; humidity.
         </p>
         <div class="hero-actions">
           <a href="#gallery" class="btn btn-primary">See the build</a>
           <a href="#how" class="btn btn-ghost">How it works</a>
         </div>
         <div class="hero-stats">
-          <div class="stat"><span class="stat-num">100%</span><span class="stat-label">Solar powered</span></div>
-          <div class="stat"><span class="stat-num">2×</span><span class="stat-label">Sensors on board</span></div>
+          <div class="stat"><span class="stat-num">ESP32</span><span class="stat-label">WiFi brain onboard</span></div>
+          <div class="stat"><span class="stat-num">SHT31-D</span><span class="stat-label">High-accuracy sensor</span></div>
           <div class="stat"><span class="stat-num">1</span><span class="stat-label">Hand-soldered satellite</span></div>
         </div>
       </div>
@@ -64,8 +64,8 @@
         <div class="about-text">
           <p>
             <strong>Desktop Satellite</strong> is a small hand-built model that behaves like the real thing —
-            it captures light with a <strong>solar panel</strong>, converts it into power, and runs on its own
-            with no cable attached. Every board, wire and solder joint was put together <strong>by hand</strong>.
+            it captures light with a <strong>solar panel</strong>, converts it into power, and senses the room
+            around it. Every board, wire and solder joint was put together <strong>by hand</strong>.
           </p>
           <p>
             On its onboard screen it shows the <strong>current temperature and humidity</strong> of the room,
@@ -73,13 +73,12 @@
           </p>
           <p>
             It started as a way to practice soldering and electronics — turning raw components into something
-            that actually works. The result is a small piece of <strong>“space”</strong> on the desk: a machine
-            powered by the sun, sensing the room, and always quietly on.
+            that actually works and is fun to keep improving. The result is a small piece of <strong>“space”</strong>
+            on the desk: a machine that senses the room and quietly reflects what it finds.
           </p>
           <p>
-            Because it needs no cable and stores its own energy, it can be placed anywhere — by a window for
-            maximum light, or anywhere a bit of light reaches. It’s the kind of project that makes an ordinary
-            desk feel a little more like mission control.
+            It pairs a solar panel with a battery for green energy, and it’s the kind of project that makes an
+            ordinary desk feel a little more like mission control.
           </p>
         </div>
         <div class="about-card">
@@ -124,7 +123,7 @@
         <article class="feature">
           <div class="feature-icon">☀️</div>
           <h3>Solar powered</h3>
-          <p>A compact photovoltaic panel harvests indoor light and keeps the satellite running free of cables.</p>
+          <p>A compact photovoltaic panel harvests light and powers the satellite — a step toward running on green energy.</p>
         </article>
         <article class="feature">
           <div class="feature-icon">🌡️</div>
@@ -144,12 +143,12 @@
         <article class="feature">
           <div class="feature-icon">🖥️</div>
           <h3>Clear display</h3>
-          <p>A small OLED / LCD screen shows both readings at a glance, even in low light.</p>
+          <p>A 0.96-inch TFT colour screen shows the readings clearly, even in low light.</p>
         </article>
         <article class="feature">
           <div class="feature-icon">🛰️</div>
-          <h3>Always on</h3>
-          <p>With stored sunlight it keeps running through the evening, a true "desk satellite" that never sleeps.</p>
+          <h3>Desk satellite</h3>
+          <p>A hand-built machine that senses the room — a small piece of "space" that sits quietly on the desk.</p>
         </article>
       </div>
     </section>
@@ -186,8 +185,8 @@
         </div>
       </div>
       <p class="flow-note">
-        Core building blocks: ×1 solar panel · ×1 microcontroller · ×1 temp/humidity sensor (e.g. DHT11 / DHT22)
-        · ×1 OLED/LCD display · wiring &amp; solder. All joined by hand.
+        Core building blocks: ×1 solar panel · ×1 ESP32-C3 microcontroller · ×1 SHT31-D temp/humidity sensor
+        · ×1 TFT display · wiring &amp; solder. All joined by hand.
       </p>
     </section>
 
@@ -226,8 +225,8 @@
           <div class="timeline-marker">4</div>
           <div class="timeline-body">
             <h3>Add the battery — the final result</h3>
-            <p>The battery was added so the satellite could store energy and keep running on its own —
-            the moment it truly became a working desktop satellite.</p>
+            <p>The battery was added so the satellite could store energy — the moment it truly became
+            a complete, working desktop satellite.</p>
           </div>
         </div>
         <div class="timeline-item">
@@ -279,23 +278,23 @@
         </div>
         <div class="part">
           <span class="part-icon">🧠</span>
-          <h3>The microcontroller</h3>
-          <p>The brain — it reads the sensor and decides what the display should show.</p>
+          <h3>The ESP32-C3 brain</h3>
+          <p>A RISC-V microcontroller with built-in WiFi — it reads the sensor and drives the display.</p>
         </div>
         <div class="part">
           <span class="part-icon">🌡️</span>
-          <h3>The sensor</h3>
-          <p>The senses — it measures the temperature and humidity of the room.</p>
+          <h3>The SHT31-D sensor</h3>
+          <p>A high-accuracy sensor — temperature ±0.3°C, humidity ±2%, read over I2C.</p>
         </div>
         <div class="part">
           <span class="part-icon">🖥️</span>
-          <h3>The display</h3>
-          <p>The voice — it shows the live readings so you can read them at a glance.</p>
+          <h3>The TFT display</h3>
+          <p>A 0.96-inch colour screen — it shows the readings so you can read them at a glance.</p>
         </div>
         <div class="part">
           <span class="part-icon">🔋</span>
-          <h3>The battery</h3>
-          <p>The endurance — it stores solar charge so the satellite keeps going even without light.</p>
+          <h3>Solar panel &amp; battery</h3>
+          <p>The energy — a solar panel harvests light, and a battery stores it so the satellite can keep going.</p>
         </div>
         <div class="part">
           <span class="part-icon">🔩</span>
@@ -320,7 +319,7 @@
           <div class="compare-icon">☀️</div>
           <h3>Solar power</h3>
           <p><em>Real craft:</em> unfold solar panels to turn sunlight into electricity for every system.</p>
-          <p><em>This one:</em> a small photovoltaic panel does the same — no cable needed.</p>
+          <p><em>This one:</em> uses a small photovoltaic panel to harvest light for its power.</p>
         </article>
         <article class="compare">
           <div class="compare-icon">🌡️</div>
@@ -338,7 +337,7 @@
           <div class="compare-icon">🔋</div>
           <h3>Stored energy</h3>
           <p><em>Real craft:</em> run on batteries charged by the sun to survive the dark side of orbit.</p>
-          <p><em>This one:</em> stores its solar charge in a battery too, so it keeps working all evening.</p>
+          <p><em>This one:</em> carries a battery so it can store energy and keep sensing the room around it.</p>
         </article>
       </div>
     </section>
